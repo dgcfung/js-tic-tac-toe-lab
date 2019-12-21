@@ -1,0 +1,38 @@
+header{
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    margin: 5px 10px 5px 10px;
+    
+}
+
+.reset-button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32 px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16 px;
+
+}
+
+/* source: https://www.w3schools.com/css/css3_buttons.asp */
+
+
+/* td {
+    width: 100px;
+    height: 100px; */
+  /* }
+  table {
+    margin: 5px auto;
+  }
+  .vert {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+  .hori {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  } */
