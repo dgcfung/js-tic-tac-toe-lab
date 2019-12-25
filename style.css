@@ -36,3 +36,8 @@ td {
     width: 150px;
     }
 /* how to create tables for TTT source:    https://stackoverflow.com/questions/26964025/making-a-tic-tac-toe-board-in-html-css-or-javascript */
+
+.square{
+    background-color: white;
+    text-align: center;
+}
