@@ -13,6 +13,16 @@ let allSquares = document.querySelectorAll('.square')  //we select all the squar
 console.log(allSquares)
 console.log(A1)
 console.log(A9)
+// let square1= document.querySelector('#A1>h1').innerHTML
+// let square2= document.querySelector('#A2>h1').innerHTML
+// let square3= document.querySelector('#A3>h1').innerHTML
+// let square4= document.querySelector('#A4>h1').innerHTML
+// let square5= document.querySelector('#A5>h1').innerHTML
+// let square6= document.querySelector('#A6>h1').innerHTML
+// let square7= document.querySelector('#A7>h1').innerHTML
+// let square8= document.querySelector('#A8>h1').innerHTML
+// let square9= document.querySelector('#A9>h1').innerHTML
+
 
 allSquares.forEach((square) => { //
     square.addEventListener('click', newClick) // WE DO AGAIN A forEach in ORDER TO ADD CLICKS
@@ -23,43 +33,47 @@ let checkStalemate= 0
 
 function newClick() {
 
-    if (this.innerHTML == '') {
+    if (this.innerHTML == '☺') {
         if (checkStalemate == 0){
-            this.innerHTML = "<h1>X</h1>"
+            this.innerHTML = "X"
             checkStalemate += 1
             console.log(checkStalemate)
         } else if (checkStalemate == 1) {
         if (checkStalemate == 1)
-            this.innerHTML = "<h1>O</h1>"
+            this.innerHTML = "O"
             checkStalemate += 1
             console.log(checkStalemate)
         } else if(checkStalemate==2){
-            this.innerHTML = "<h1>X</h1>"
+            this.innerHTML = "X"
             checkStalemate += 1
             console.log(checkStalemate)
         }else if (checkStalemate==3){
-            this.innerHTML = "<h1>O</h1>"
+            this.innerHTML = "O"
             checkStalemate += 1
             console.log(checkStalemate)
+            check4Win()
         }else if (checkStalemate==4){
-            this.innerHTML = "<h1>X</h1>"
+            this.innerHTML = "X"
             checkStalemate += 1
             console.log(checkStalemate)
+            check4Win()
         }else if (checkStalemate==5){
-            this.innerHTML = "<h1>O</h1>"
+            this.innerHTML = "O"
             checkStalemate += 1
             console.log(checkStalemate)
+            check4Win()
         }else if (checkStalemate==6){
-            this.innerHTML = "<h1>X</h1>"
+            this.innerHTML = "X"
             checkStalemate += 1
             console.log(checkStalemate)
             check4Win()
         }else if (checkStalemate==7){
-            this.innerHTML = "<h1>O</h1>"
+            this.innerHTML = "O"
             checkStalemate += 1
             console.log(checkStalemate)
+            check4Win()
         }else if (checkStalemate==8){
-            this.innerHTML = "<h1>X</h1>"
+            this.innerHTML = "X"
             checkStalemate += 1
             console.log(checkStalemate)
             check4Win()
@@ -70,42 +84,105 @@ function newClick() {
 }
 
 // Allow us to check for win by setting each square ID a separate variable
-// let square1= document.querySelector('#A1>h1').innerHTML
-// let square2= document.querySelector('#A2')
-// let square3= document.querySelector('#A3')
-let square4= document.querySelector('#A4')
-let square5= document.querySelector('#A5')
-let square6= document.querySelector('#A6')
-let square7= document.querySelector('#A7')
-let square8= document.querySelector('#A8')
-let square9= document.querySelector('#A9')
+// let square1= 0
+// let square2= 0
+// let square3= 0
+// let square4= document.querySelector('#A4')
+// let square5= document.querySelector('#A5')
+// let square6= document.querySelector('#A6')
+// let square7= document.querySelector('#A7')
+// let square8= document.querySelector('#A8')
+// let square9= document.querySelector('#A9')
+
 // console.log(square1)
+// let square1= document.querySelector('#A1>h1').innerHTML
+//     let square2= document.querySelector('#A2>h1').innerHTML
+//     let square3= document.querySelector('#A3>h1').innerHTML
+//     let square4= document.querySelector('#A4>h1').innerHTML
+//     let square5= document.querySelector('#A5>h1').innerHTML
+//     let square6= document.querySelector('#A6>h1').innerHTML
+//     let square7= document.querySelector('#A7>h1').innerHTML
+//     let square8= document.querySelector('#A8>h1').innerHTML
+//     let square9= document.querySelector('#A9>h1').innerHTML
+
 
 let playerOneWin
 // let playerTwoWin
 
 function check4Win(){
-    let square1= document.querySelector('#A1>h1').innerHTML
-    let square2= document.querySelector('#A2>h1').innerHTML
-    let square3= document.querySelector('#A3>h1').innerHTML
-    let square4= document.querySelector('#A4>h1').innerHTML
-    let square5= document.querySelector('#A5>h1').innerHTML
-    let square6= document.querySelector('#A6>h1').innerHTML
-    let square7= document.querySelector('#A7>h1').innerHTML
-    let square8= document.querySelector('#A8>h1').innerHTML
-    let square9= document.querySelector('#A9>h1').innerHTML
+
+    let square1= document.querySelector('#A1').innerHTML
+    let square2= document.querySelector('#A2').innerHTML
+    let square3= document.querySelector('#A3').innerHTML
+    let square4= document.querySelector('#A4').innerHTML
+    let square5= document.querySelector('#A5').innerHTML
+    let square6= document.querySelector('#A6').innerHTML
+    let square7= document.querySelector('#A7').innerHTML
+    let square8= document.querySelector('#A8').innerHTML
+    let square9= document.querySelector('#A9').innerHTML
+
 
     // let playerOneA1= document.querySelector('#A1'.querySelector('h1')
-    console.log(square1)
-    console.log(square2)
-    console.log(square3)
+    // console.log(square1)
+    // console.log(square2)
+    // console.log(square3)
+    // console.log(square4)
+    // console.log(square5)
+    // console.log(square6)
+    // console.log(square7)
+    // console.log(square8)
+    // console.log(square9)
+
     // console.log(playerOneWinA1)
     if(square1=="O" && square2=="O" && square3=="O"){
     // if('#A1' =="<h1>O</h1>" && '#A2' == "<h1>O</h1>" && '#A3' == "<h1>O</h1>"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }if(square4=="O"&& square5=="O"&& square6=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square7=="O" && square8=="O"&& square9=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square1=="O" && square5=="O"&& square9=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square3=="O" && square5=="O"&& square7=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square1=="O"&& square4=="O"&& square7=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square2=="O"&& square5=="O"&& square8=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square3=="O"&& square6=="O"&& square9=="O"){
+        alert('Player Two Won!')
+        // console.log(winner)
+    }else if(square1=="X" && square2=="X" && square3=="X"){
         alert('Player One Won!')
-        console.log(winner)
-    }     
-
+    }if(square4=="X"&& square5=="X"&& square6=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }else if(square7=="X" && square8=="X"&& square9=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }else if(square1=="X" && square5=="X"&& square9=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }else if(square3=="X" && square5=="X"&& square7=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }else if(square1=="X"&& square4=="X"&& square7=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }else if(square2=="X"&& square5=="X"&& square8=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }else if(square3=="X"&& square6=="X"&& square9=="X"){
+        alert('Player One Won!')
+        // console.log(winner)
+    }
 }
 
 
