@@ -9,10 +9,47 @@
 //     // resets game, run script again
 // }
 
+document.querySelector('.reset-button').onclick= function(){
+    // document.querySelectorAll('.square').reset()
+    let resetSquares= document.querySelectorAll('.square')
+    // reset squares is similar to an array.
+    resetSquares.forEach(square => {
+        // square is similar to an element in array
+        square.style.backgroundColor='white'
+        square.innerHTML='☺'
+        square.style.color='black'
+    });
+    // .innerHTML='☺'
+    // resetSquares.style.backgroundColor='white'
+    // console.log(resetBoard)
+    // resetBoard.style.backgroundColor='white'
+    // document.querySelectorAll('#A1').innerHTML='☺'
+
+    // resetSquares.style.backgroundColor='blue'
+    // document.querySelector('#player-turn').innerHTML= 'New Game';
+    checkStalemate=0;
+    
+}
+
+// document.getElementById("reset").onclick = function() {
+//     document.getElementById("numbers").innerHTML = "";
+//  };
+
 let allSquares = document.querySelectorAll('.square')  //we select all the squares
 console.log(allSquares)
 console.log(A1)
 console.log(A9)
+
+// document.querySelector('.reset-button').onclick= function(){
+//     // document.querySelectorAll('.square').innerHTML="☺"
+//     // console.log(resetBoard)
+//     // resetBoard.style.backgroundColor='white'
+//     allSquares.style.backgroundColor= 'white'
+//     document.querySelector('#player-turn').innerHTML= 'New Game';
+//     checkStalemate=0;
+    
+// }
+
 // let square1= document.querySelector('#A1>h1').innerHTML
 // let square2= document.querySelector('#A2>h1').innerHTML
 // let square3= document.querySelector('#A3>h1').innerHTML
@@ -28,6 +65,10 @@ allSquares.forEach((square) => { //
     square.addEventListener('click', newClick) // WE DO AGAIN A forEach in ORDER TO ADD CLICKS
     // console.log(square)
 })
+// allSquares is similar to an array.
+
+let playerTurn= document.querySelector('#player-turn')
+console.log(playerTurn)
 
 let checkStalemate= 0
 
@@ -37,46 +78,78 @@ function newClick() {
         if (checkStalemate == 0){
             this.innerHTML = "X"
             checkStalemate += 1
+            playerTurn.innerHTML= "Player 2 Turn"
+            this.style.color='green'
+            this.style.backgroundColor='yellow'
             console.log(checkStalemate)
         } else if (checkStalemate == 1) {
         if (checkStalemate == 1)
             this.innerHTML = "O"
             checkStalemate += 1
+            this.style.color='pink'
+            this.style.backgroundColor='blue'
+            playerTurn.innerHTML= "Player 1 Turn"
             console.log(checkStalemate)
         } else if(checkStalemate==2){
             this.innerHTML = "X"
             checkStalemate += 1
+            playerTurn.innerHTML= "Player 2 Turn"
+            this.style.color='green'
+            this.style.backgroundColor='yellow'
             console.log(checkStalemate)
         }else if (checkStalemate==3){
             this.innerHTML = "O"
             checkStalemate += 1
+            this.style.color='pink'
+            this.style.backgroundColor='blue'
+            playerTurn.innerHTML= "Player 1 Turn"
             console.log(checkStalemate)
             check4Win()
         }else if (checkStalemate==4){
             this.innerHTML = "X"
             checkStalemate += 1
+            playerTurn.innerHTML= "Player 2 Turn"
+            this.style.color='green'
+            this.style.backgroundColor='yellow'
             console.log(checkStalemate)
             check4Win()
         }else if (checkStalemate==5){
             this.innerHTML = "O"
             checkStalemate += 1
+            this.style.color='pink'
+            this.style.backgroundColor='blue'
+            playerTurn.innerHTML= "Player 1 Turn"
             console.log(checkStalemate)
             check4Win()
         }else if (checkStalemate==6){
             this.innerHTML = "X"
             checkStalemate += 1
+            playerTurn.innerHTML= "Player 2 Turn"
+            this.style.color='green'
+            this.style.backgroundColor='yellow'
             console.log(checkStalemate)
             check4Win()
         }else if (checkStalemate==7){
             this.innerHTML = "O"
             checkStalemate += 1
+            this.style.color='pink'
+            this.style.backgroundColor='blue'
+            playerTurn.innerHTML= "Player 1 Turn"
             console.log(checkStalemate)
             check4Win()
         }else if (checkStalemate==8){
             this.innerHTML = "X"
             checkStalemate += 1
+            playerTurn.innerHTML= "Full Board: It's a stalemate! Press Reset."
+            this.style.color='green'
+            this.style.backgroundColor='yellow'
             console.log(checkStalemate)
             check4Win()
+            // alert(`Full board, It's a tie!`)
+        }else if (checkStalemate==9){
+            checkStalemate += 1
+            console.log(checkStalemate)
+            alert(`Full board, It's a tie!`)
         }
     
     }
@@ -106,10 +179,14 @@ function newClick() {
 //     let square9= document.querySelector('#A9>h1').innerHTML
 
 
-let playerOneWin
+// let playerOneWin
+let playerTwoWin
 // let playerTwoWin
+let resetGame= false
 
 function check4Win(){
+
+    let resetGame= false
 
     let square1= document.querySelector('#A1').innerHTML
     let square2= document.querySelector('#A2').innerHTML
@@ -134,57 +211,105 @@ function check4Win(){
     // console.log(square9)
 
     // console.log(playerOneWinA1)
+
     if(square1=="O" && square2=="O" && square3=="O"){
     // if('#A1' =="<h1>O</h1>" && '#A2' == "<h1>O</h1>" && '#A3' == "<h1>O</h1>"){
         alert('Player Two Won!')
+        resetGame= true
+        // resetGame()
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }if(square4=="O"&& square5=="O"&& square6=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square7=="O" && square8=="O"&& square9=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square1=="O" && square5=="O"&& square9=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square3=="O" && square5=="O"&& square7=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square1=="O"&& square4=="O"&& square7=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square2=="O"&& square5=="O"&& square8=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square3=="O"&& square6=="O"&& square9=="O"){
         alert('Player Two Won!')
+        // playerTwoWin +=
+        // console.log(playerTwoWin)
         // console.log(winner)
     }else if(square1=="X" && square2=="X" && square3=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
     }if(square4=="X"&& square5=="X"&& square6=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }else if(square7=="X" && square8=="X"&& square9=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }else if(square1=="X" && square5=="X"&& square9=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }else if(square3=="X" && square5=="X"&& square7=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }else if(square1=="X"&& square4=="X"&& square7=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }else if(square2=="X"&& square5=="X"&& square8=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }else if(square3=="X"&& square6=="X"&& square9=="X"){
         alert('Player One Won!')
+        // playerOneWin +=
+        // console.log(playerOneWin)
         // console.log(winner)
     }
+    // else if(square1 == "O" || square1=="X" && square2 == "O" ||square2=="X" && square3 == "O"&& square3=="X" && square4 == "O"||square4== "X" && square5 == "O"|| square5=="X" && square6 == "X" || square6=="X"&& square7 == "O" ||square7=="X"&& square8 == "O"||square8=="X" && square9 =="O"|| square9=="X") {
+    //     alert(`It's a tie!`)
+    // }
+
+    // console.log(playerOneWin)
+    // console.log(playerTwoWin)
+    
 }
 
+// function reset(){
+//     console.log('ojoenbag')
+//     // let newGame= document.querySelectorAll(".square")
+//     // newGame.innerHTML= "☺"
+
+// }
 
 // let square1= document.querySelectorAll('#A1')
 // let square2= document.querySelectorAll('#A2')
